@@ -19,6 +19,7 @@ rw_dir_file(hal_fingerprint_default, vendor_proc_display)
 rw_dir_file(hal_fingerprint_default, vendor_sysfs_graphics)
 r_dir_file(hal_fingerprint_default, sysfs_leds)
 r_dir_file(hal_fingerprint_default, vendor_proc_fingerprint)
+r_dir_file(hal_fingerprint_default, vendor_sysfs_graphics)
 
 get_prop(hal_fingerprint_default, system_oplus_project_prop)
 set_prop(hal_fingerprint_default, system_fingerprint_prop)
