@@ -1,3 +1,4 @@
+r_dir_file(platform_app, vendor_sysfs_graphics)
 r_dir_file(platform_app, vendor_sysfs_sde_crtc)
 
 allow platform_app selinuxfs:file r_file_perms;
