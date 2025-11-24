@@ -12,6 +12,7 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "org.lineageos.settings.resources",
+        "SettingsLib",
     ],
 
     optimize: {
