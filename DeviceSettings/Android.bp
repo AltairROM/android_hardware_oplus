@@ -1,5 +1,5 @@
 android_app {
-    name: "KeyHandler",
+    name: "DeviceSettings",
 
     srcs: ["src/**/*.kt"],
 
@@ -7,21 +7,18 @@ android_app {
     platform_apis: true,
     system_ext_specific: true,
 
-    libs: ["SystemUIPluginLib"],
     static_libs: [
-        "org.lineageos.settings.resources",
+        "SettingsLib",
     ],
 
     optimize: {
-        optimize: true,
         proguard_flags_files: ["proguard.flags"],
-        shrink_resources: true,
     },
 }
 
-/*sh_binary {
+sh_binary {
     name: "tri-state-key-calibrate",
     init_rc: ["tri-state-key-calibrate.rc"],
     src: "tri-state-key-calibrate.sh",
     vendor: true,
-}*/
+}
