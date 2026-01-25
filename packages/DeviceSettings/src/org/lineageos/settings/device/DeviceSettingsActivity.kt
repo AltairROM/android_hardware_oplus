@@ -8,20 +8,20 @@ package org.lineageos.settings.device
 import android.os.Bundle
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 
-class ButtonSettingsActivity : CollapsingToolbarBaseActivity() {
+class DeviceSettingsActivity : CollapsingToolbarBaseActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportFragmentManager
             .beginTransaction()
             .replace(
                 com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                ButtonSettingsFragment(),
+                DeviceSettingsFragment(),
                 TAG,
             )
             .commit()
     }
 
     companion object {
-        private const val TAG = "ButtonSettingsActivity"
+        private const val TAG = "DeviceSettingsActivity"
     }
 }
