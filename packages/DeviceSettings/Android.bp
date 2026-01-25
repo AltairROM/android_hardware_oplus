@@ -1,5 +1,5 @@
 android_app {
-    name: "KeyHandler",
+    name: "DeviceSettings",
 
     srcs: ["src/**/*.kt"],
 
