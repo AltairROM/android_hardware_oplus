@@ -8,8 +8,8 @@ package org.lineageos.settings.device
 import android.os.Bundle
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
-class ButtonSettingsFragment : SettingsBasePreferenceFragment() {
+class DeviceSettingsFragment : SettingsBasePreferenceFragment() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.button_panel, rootKey)
+        setPreferencesFromResource(R.xml.settings_panel, rootKey)
     }
 }
