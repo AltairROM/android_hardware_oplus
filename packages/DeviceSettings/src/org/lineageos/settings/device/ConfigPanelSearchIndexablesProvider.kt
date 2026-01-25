@@ -56,8 +56,8 @@ class ConfigPanelSearchIndexablesProvider : SearchIndexablesProvider() {
             arrayOf<SearchIndexableResource>(
                 SearchIndexableResource(
                     1,
-                    R.xml.button_panel,
-                    ButtonSettingsActivity::class.java.name,
+                    R.xml.settings_panel,
+                    DeviceSettingsActivity::class.java.name,
                     0,
                 )
             )
