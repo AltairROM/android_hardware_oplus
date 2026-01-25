@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2018, 2021-2025 The LineageOS Project
+     SPDX-FileCopyrightText: 2025 Altair ROM Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:sharedUserId="android.uid.system"
+          package="org.lineageos.settings.device">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.systemui.permission.PLUGIN" />
+
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+    <protected-broadcast android:name="org.lineageos.settings.UPDATE_SETTINGS" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/device_settings_app_name"
+        android:theme="@style/Theme.SubSettingsBase.Expressive"
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true">
+
+        <provider
+            android:name=".ConfigPanelSearchIndexablesProvider"
+            android:authorities="org.lineageos.settings.device"
+            android:multiprocess="false"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.READ_SEARCH_INDEXABLES"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <!-- Device settings -->
+        <activity
+            android:name=".DeviceSettingsActivity"
+            android:label="@string/app_name"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="org.lineageos.settings.device.DEVICE_SPECIFIC_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".AlertSliderPlugin"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.systemui.action.PLUGIN_OVERLAY" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".KeyHandler"
+            android:permission="KeyHandlerService"
+            android:exported="false" />
+    </application>
+</manifest>
